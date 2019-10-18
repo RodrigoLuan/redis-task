@@ -1,0 +1,19 @@
+{
+  "name": "cursoredis",
+  "version": "1.0.0",
+  "description": "todo list",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodrigo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "*",
+    "body-parser": "*",
+    "ejs": "^2.4.2",
+    "morgan": "*",
+    "redis": "*",
+    "nodemon": "*"
+  }
+}
