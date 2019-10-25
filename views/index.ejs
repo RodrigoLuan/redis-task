@@ -1,6 +1,65 @@
+<html>
+    <head>
+        <title>Redis tasks</title>
+            <style>
+                    .del:checked + span{
+                        color:red;
+                    }
+                    .task-list{
+                        list-style: none;
+                    }
+                   </style>
+    </head>
+<body>
+
+    
+<h3>add task</h3>
+<form method="post" action="/task/add">
+    <label> add task</label>
+    <input type="text" name="task", placeholder="add task">
+    <input type="submit" value="Submit">
+ </form>   
 <%= title %>
-<ul>
-<% tasks.forEach(function(task){ %>
-<li><%= task %></li>
-<% }) %>
-</ul>
+<form method="post" action="/task/delete">
+        <ul class="task-list">
+                <% tasks.forEach(function(task){ %>
+             <li>
+                 <label>
+                        <input type="checkbox" name="tasks" class="del" value="<%= task %>">
+                        <span><%= task %></span>
+                 </label>
+            </li>
+            <% }) %>
+        </ul>
+     <input type="submit" value="remove">
+</form>
+
+<h3>Next Bussiness call</h3>
+Name: <%= call.name%><br>
+Compania: <%= call.company%><br>
+Telefone: <%= call.phone%><br>
+data: <%= call.time%><br>
+
+<h3>Edit next call</h3>
+<form method="post" action="/call/add">
+    <label>Contato</label>
+    <input type="text" name="name" placeholder="Task Name">
+    <br><br>
+    <label>Compania</label>
+    <input type="text" name="company" placeholder="Compania">
+    <br><br>
+    <label>Teleone</label>
+    <input type="text" name="phone" placeholder="Telefone">
+    <br><br>
+    <label>day and time</label>
+    <input type="text" name="time" placeholder="time">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+
+</html>
+
+
+
+
